@@ -1,6 +1,8 @@
 library(tidyverse)
+library(here)
 
-our_data_files <- list.files(pattern = ".csv$")
+our_data_files <- list.files(
+  "analysis/data/raw_data", pattern = ".csv$", full.names=TRUE)
 
 our_points <-
   map(our_data_files,
@@ -13,7 +15,7 @@ our_points_tbl <-
             .id = "specimen")
 
 our_points_tbl %>%
-  filter(specimen %in% our_data_files[1:10]) %>%
+  filter(specimen %in% our_data_files[1:61]) %>%
   ggplot() +
   aes(V1, V2) +
   geom_point() +
