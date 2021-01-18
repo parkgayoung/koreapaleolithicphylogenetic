@@ -2,7 +2,8 @@ library(tidyverse)
 library(here)
 
 our_data_files <- list.files(
-  "analysis/data/raw_data", pattern = ".csv$", full.names=TRUE)
+  "analysis/data/raw_data", pattern = ".csv$", full.names=TRUE) %>%
+  str_subset(., "treat")
 
 our_points <-
   map(our_data_files,
