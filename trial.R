@@ -3,7 +3,7 @@ library(here)
 
 our_data_files <- list.files(
   "analysis/data/raw_data", pattern = ".csv$", full.names=TRUE)
-#%>% str_subset(., "sun")
+#%>%   str_subset(., "SB_1")
 
 our_points <-
   map(our_data_files,
