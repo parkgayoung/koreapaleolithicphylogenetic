@@ -3,7 +3,7 @@ library(here)
 
 our_data_files <- list.files(
   "analysis/data/raw_data", pattern = ".csv$", full.names=TRUE)
-#%>%   str_subset(., "SB_1")
+#%>%str_subset(., "SB_1")
 
 our_points <-
   map(our_data_files,
@@ -16,7 +16,7 @@ our_points_tbl <-
             .id = "specimen")
 
 our_points_tbl %>%
-  filter(specimen %in% our_data_files[1:61]) %>%
+  filter(specimen %in% our_data_files[1:93]) %>%
   ggplot() +
   aes(V1, V2) +
   geom_point() +
