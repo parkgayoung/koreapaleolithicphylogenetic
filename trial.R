@@ -16,7 +16,7 @@ our_points_tbl <-
             .id = "specimen")
 
 our_points_tbl %>%
-  filter(specimen %in% our_data_files[1:93]) %>%
+  filter(specimen %in% our_data_files[1:130]) %>%
   ggplot() +
   aes(V1, V2) +
   geom_point() +
